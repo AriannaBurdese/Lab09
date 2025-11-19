@@ -62,5 +62,6 @@ class Model:
 
     def _ricorsione(self, start_index: int, pacchetto_parziale: list, durata_corrente: int, costo_corrente: float, valore_corrente: int, attrazioni_usate: set):
         """ Algoritmo di ricorsione che deve trovare il pacchetto che massimizza il valore culturale"""
-
+        if len(pacchetto_parziale) == 20:
+            pass
         # TODO: è possibile cambiare i parametri formali della funzione se ritenuto opportuno
