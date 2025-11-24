@@ -25,7 +25,7 @@ class TourDAO:
                     id=row["id"],
                     nome=row["nome"],
                     durata_giorni=row["durata_giorni"],
-                    costo=row["costo"],
+                    costo=float(row["costo"]),
                     id_regione=row["id_regione"]
                 )
                 result[tour.id] = tour
@@ -51,7 +51,7 @@ class TourDAO:
             return None
 
         cursor = cnx.cursor(dictionary=True)
-        query = """ SELECT DISTINCT id_tour AND id_attrazione
+        query = """ SELECT DISTINCT id_tour, id_attrazione
                     FROM tour_attrazione"""
         try:
             cursor.execute(query)
